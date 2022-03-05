@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 import { submitComment } from '../services';
+import * as gtag from '../lib/gtag'
 
 const CommentsForm = ({slug}) => {
   const [error, setError] = useState(false);
@@ -41,6 +42,13 @@ const CommentsForm = ({slug}) => {
       window.localStorage.removeItem('name', name)
       window.localStorage.removeItem('email', email)
     }
+
+    gtag.event({
+      action: 'submit_form',
+      category: 'Comment',
+      label: slug,
+      value: email,
+    })
 
     submitComment(commentObj)
       .then((res) => {

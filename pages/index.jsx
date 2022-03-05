@@ -9,6 +9,7 @@ export default function Home({posts}) {
       <Head>
         <title>ReInvista Blog</title>
         <link rel="icon" href="/favicon.ico" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5317399615908400" crossorigin="anonymous"></script>
       </Head>
       <FeaturedPosts/>
       <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
